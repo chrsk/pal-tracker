@@ -11,16 +11,16 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
 
     @Override
     public TimeEntry create(TimeEntry te) {
-        if (!inMemoryMap.isEmpty()){
+        Long newId = 1L;
+
+        if(!inMemoryMap.isEmpty()) {
             Set<Long> mapKeySet = inMemoryMap.keySet();
             Long maxId = Collections.max(mapKeySet);
-            if (maxId == 0 && mapKeySet.size() == 0)
-                te.setId(maxId);
-            else
-                te.setId(maxId+1);
+            newId = maxId + 1;
         }
 
-        inMemoryMap.put(te.getId(),te);
+        te.setId(newId);
+        inMemoryMap.put(newId,te);
 
         return te;
     }

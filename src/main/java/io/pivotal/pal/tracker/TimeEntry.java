@@ -5,14 +5,14 @@ import java.util.Objects;
 
 public class TimeEntry {
 
-    private long id;
+    private Long id;
     private long projectId;
     private long userId;
     private LocalDate date;
     private int hours;
 
     public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
-        this.id = 1L;
+        this.id = 0L;
         this.projectId = projectId;
         this.userId = userId;
         this.date = date;
