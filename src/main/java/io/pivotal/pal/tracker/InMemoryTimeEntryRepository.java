@@ -14,7 +14,10 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
         if (!inMemoryMap.isEmpty()){
             Set<Long> mapKeySet = inMemoryMap.keySet();
             Long maxId = Collections.max(mapKeySet);
-            te.setId(maxId+1);
+            if (maxId == 0 && mapKeySet.size() == 0)
+                te.setId(maxId);
+            else
+                te.setId(maxId+1);
         }
 
         inMemoryMap.put(te.getId(),te);
