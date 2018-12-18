@@ -3,6 +3,6 @@ applications:
   - name: pal-tracker
     path: build/libs/pal-io.pivotal.pal.tracker.jar
     routes:
-      - route: pal-tracker-milan-dortmund.apps.pikes.pal.pivotal.io
+      - route: pal-tracker-leon-dortmund.apps.pikes.pal.pivotal.io
     env:
       WELCOME_MESSAGE: Hello from the review environment
