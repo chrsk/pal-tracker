@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-@Component
 public class InMemoryTimeEntryRepository implements TimeEntryRepository {
 
     private final Map<Long, TimeEntry> inMemoryMap = new HashMap<>();
